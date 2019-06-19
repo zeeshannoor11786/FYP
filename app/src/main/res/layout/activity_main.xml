@@ -11,5 +11,15 @@
        android:name="com.google.ar.sceneform.ux.ArFragment"
        android:layout_width="match_parent"
        android:layout_height="match_parent"/>
-
+   <HorizontalScrollView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+      
+      <ImageView
+          android:src="@drawable/chair"
+          android:id="@+id/chair"
+          android:layout_width="20dp"
+          android:layout_height="wrap_content" />
+   </HorizontalScrollView>
+   
 </FrameLayout>
