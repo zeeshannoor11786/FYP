@@ -21,14 +21,14 @@ import com.google.ar.sceneform.ux.TransformableNode;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     ArFragment arFragment;
-    private ModelRenderable chairRenderable,bearRenderable,lionRenderable;
+    private ModelRenderable moonchairRenderable,bearRenderable,lionRenderable,blackbedRenderable;
 
-    ImageView bear,lion,chair;
+    ImageView bear,lion,moonchair,blackbed;
 
     View arrayView[];
     ViewRenderable name_animal;
 
-    int selected =1; // default chair is selected.
+    int selected =3; // default chair is selected.
 
 
     @Override
@@ -42,7 +42,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
          bear =(ImageView)findViewById(R.id.bear);
          lion =(ImageView)findViewById(R.id.lion);
-        chair =(ImageView)findViewById(R.id.chair);
+        moonchair =(ImageView)findViewById(R.id.moonchair);
+       blackbed =(ImageView)findViewById(R.id.blackbed);
 
 
 //         chair = (ImageView)findViewById(R.id.chair);
@@ -95,8 +96,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             ModelRenderable.builder()
-                    .setSource(this, R.raw.chair)
-                    .build().thenAccept(renderable -> chairRenderable = renderable)
+                    .setSource(this, R.raw.moonchair)
+                    .build().thenAccept(renderable -> moonchairRenderable  = renderable)
+                    .exceptionally(
+                            throwable -> {
+                                Toast.makeText(this, "Not found", Toast.LENGTH_SHORT).show();
+                                return null;
+                            }
+                    );
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            ModelRenderable.builder()
+                    .setSource(this, R.raw.blackbed)
+                    .build().thenAccept(renderable -> blackbedRenderable  = renderable)
                     .exceptionally(
                             throwable -> {
                                 Toast.makeText(this, "Not found", Toast.LENGTH_SHORT).show();
@@ -124,10 +136,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         if(selected==3)
         {
-            TransformableNode chair = new TransformableNode(arFragment.getTransformationSystem());
-            chair.setParent(anchorNode);
-            chair.setRenderable(bearRenderable);
-            chair.select();
+            TransformableNode moonchair = new TransformableNode(arFragment.getTransformationSystem());
+            moonchair.setParent(anchorNode);
+            moonchair.setRenderable(moonchairRenderable);
+            moonchair.select();
+        }
+        if(selected==4)
+        {
+            TransformableNode blackbed = new TransformableNode(arFragment.getTransformationSystem());
+            blackbed.setParent(anchorNode);
+            blackbed.setRenderable(blackbedRenderable);
+            blackbed.select();
         }
 
     }
@@ -141,7 +160,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setArrayView(){
 
         arrayView = new View[]{
-          bear,lion,chair
+          bear,lion,moonchair,blackbed
         };
     }
 
@@ -154,8 +173,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(v.getId()==R.id.bear){
             selected = 2;
         }
-        if(v.getId()==R.id.chair){
+        if(v.getId()==R.id.moonchair){
             selected = 3;
+        }
+        if(v.getId()==R.id.blackbed){
+            selected = 4;
         }
 
         }

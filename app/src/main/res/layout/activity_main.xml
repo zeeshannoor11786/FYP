@@ -33,10 +33,15 @@
           android:layout_height="wrap_content" />
 
          <ImageView
-             android:id="@+id/chair"
+             android:id="@+id/moonchair"
              android:layout_width="100dp"
              android:layout_height="match_parent"
-             android:src="@drawable/chair" />
+             android:src="@drawable/moonchair" />
+         <ImageView
+             android:id="@+id/blackbed"
+             android:layout_width="100dp"
+             android:layout_height="match_parent"
+             android:src="@drawable/blackbed" />
 
       </LinearLayout>
    </HorizontalScrollView>

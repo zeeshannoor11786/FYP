@@ -65,3 +65,23 @@ sceneform.asset('sampledata/model/lion.fbx',
         'default',
         'sampledata/model/lion.sfa',
         'src/main/res/raw/lion')
+
+sceneform.asset('sampledata/model/piston.fbx',
+        'default',
+        'sampledata/model/piston.sfa',
+        'src/main/res/raw/piston')
+
+//sceneform.asset('sampledata/model/chair.FBX',
+//        'default',
+//        'sampledata/model/chair.sfa',
+//        'src/main/res/raw/chair')
+
+sceneform.asset('sampledata/model/moonchair.obj',
+        'default',
+        'sampledata/model/moonchair.sfa',
+        'src/main/res/raw/moonchair')
+
+sceneform.asset('sampledata/model/blackbed.fbx',
+        'default',
+        'sampledata/model/blackbed.sfa',
+        'src/main/res/raw/blackbed')
