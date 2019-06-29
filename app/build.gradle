@@ -51,25 +51,6 @@ dependencies {
 
 
 
-sceneform.asset('sampledata/model/bear.fbx',
-        'default',
-        'sampledata/model/bear.sfa',
-        'src/main/res/raw/bear')
-
-//sceneform.asset('sampledata/model/lion.fbx',
-//        'default',
-//        'sampledata/model/lion.sfa',
-//        'src/main/assets/lion')
-
-sceneform.asset('sampledata/model/lion.fbx',
-        'default',
-        'sampledata/model/lion.sfa',
-        'src/main/res/raw/lion')
-
-sceneform.asset('sampledata/model/piston.fbx',
-        'default',
-        'sampledata/model/piston.sfa',
-        'src/main/res/raw/piston')
 
 //sceneform.asset('sampledata/model/chair.FBX',
 //        'default',
@@ -85,3 +66,10 @@ sceneform.asset('sampledata/model/blackbed.fbx',
         'default',
         'sampledata/model/blackbed.sfa',
         'src/main/res/raw/blackbed')
+
+
+
+sceneform.asset('sampledata/model/cupboard.fbx',
+        'default',
+        'sampledata/model/cupboard.sfa',
+        'src/main/res/raw/cupboard')

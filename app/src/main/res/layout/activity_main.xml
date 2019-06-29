@@ -22,15 +22,16 @@
 
 
          <ImageView
-             android:id="@+id/lion"
+             android:id="@+id/cupboard"
              android:layout_width="100dp"
              android:layout_height="wrap_content"
-             android:src="@drawable/lion" />
-      <ImageView
-          android:src="@drawable/bear"
-          android:id="@+id/bear"
-          android:layout_width="100dp"
-          android:layout_height="wrap_content" />
+             android:src="@drawable/cupboard" />
+
+         <ImageView
+             android:id="@+id/sofa"
+             android:layout_width="100dp"
+             android:layout_height="match_parent"
+             android:src="@drawable/sofa" />
 
          <ImageView
              android:id="@+id/moonchair"
