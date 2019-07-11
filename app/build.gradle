@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.google.ar.sceneform.plugin'
+
 
 android {
     compileSdkVersion 28
@@ -33,17 +33,17 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
    // implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.6.0'
 
-    implementation 'com.google.ar:core:1.7.0'
+    implementation 'com.google.ar:core:1.6.0'
 
     // Provides ArFragment, and other UX resources.
-    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.7.0'
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.6.0'
 
     // Alternatively, use ArSceneView without the UX dependency.
-    implementation 'com.google.ar.sceneform:core:1.7.0'
+    implementation 'com.google.ar.sceneform:core:1.6.0'
 }
 
 
-
+apply plugin: 'com.google.ar.sceneform.plugin'
 //sceneform.asset('sampledata/model/chair.fbx',
 //        'default',
 //        'sampledata/model/chair.sfa',
@@ -73,3 +73,15 @@ sceneform.asset('sampledata/model/cupboard.fbx',
         'default',
         'sampledata/model/cupboard.sfa',
         'src/main/res/raw/cupboard')
+
+sceneform.asset('sampledata/model/bed.fbx',
+        'default',
+        'sampledata/model/bed.sfa',
+        'src/main/res/raw/bed')
+
+
+
+sceneform.asset('sampledata/model/desk.fbx',
+        'default',
+        'sampledata/model/desk.sfa',
+        'src/main/res/raw/desk')
