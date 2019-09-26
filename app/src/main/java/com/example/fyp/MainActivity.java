@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             TransformableNode cupboard = new TransformableNode(arFragment.getTransformationSystem());
             cupboard.setParent(anchorNode);
             cupboard.setRenderable(cupboardRenderable);
-            addName(anchorNode,cupboard,"Cupboard");
+//            addName(anchorNode,cupboard,"Cupboard");
             cupboard.select();
 
         }
@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             sofa.setParent(anchorNode);
            sofa.setRenderable(sofaRenderable);
            sofa.getScaleController();
-            addName(anchorNode,sofa,"Sofa");
+//            addName(anchorNode,sofa,"Sofa");
           sofa.select();
         }
         if(selected==3)
@@ -184,7 +184,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             moonchair.setParent(anchorNode);
             moonchair.setRenderable(moonchairRenderable);
             moonchair.getScaleController();
-            addName(anchorNode,moonchair,"MoonChair");
+//            addName(anchorNode,moonchair,"MoonChair");
             moonchair.select();
         }
         if(selected==4)
@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             blackbed.setParent(anchorNode);
             blackbed.setRenderable(blackbedRenderable);
             blackbed.getScaleController();
-            addName(anchorNode,blackbed,"Blackbed");
+//            addName(anchorNode,blackbed,"Blackbed");
             blackbed.select();
         }
 
@@ -203,7 +203,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             bed.setParent(anchorNode);
             bed.setRenderable(bedRenderable);
             bed.getScaleController();
-            addName(anchorNode,bed,"Bed");
+//            addName(anchorNode,bed,"Bed");
             bed.select();
         }
         if(selected==6)
@@ -212,7 +212,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             desk.setParent(anchorNode);
             desk.setRenderable(deskRenderable);
             desk.getScaleController();
-            addName(anchorNode,desk,"Desk");
+//            addName(anchorNode,desk,"Desk");
             desk.select();
         }
 
@@ -236,12 +236,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if(v.getId()==R.id.cupboard ) {
             selected = 1;
-            setBackground(v.getId());
+//            setBackground(v.getId());
 
         }
         else if(v.getId()==R.id.sofa){
             selected = 2;
-            setBackground(v.getId());
+//            setBackground(v.getId());
         }
         else if(v.getId()==R.id.moonchair){
 
@@ -265,61 +265,61 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //Naming  Furniture's
 
-    private void addName(AnchorNode anchorNode, TransformableNode model, String name) {
-
-
-
-        TransformableNode nameView= new TransformableNode(arFragment.getTransformationSystem());
-
-        ViewRenderable.builder().setView(this,R.layout.furniture_name)
-                .build()
-                .thenAccept(viewRenderable -> {
-                    nameView.setLocalPosition(new Vector3(0f,model.getLocalPosition().y+0.4f,0));
-                    nameView.setParent(anchorNode);
-                    nameView.getScaleController().setMaxScale(1f);
-                    nameView.getScaleController().setMinScale(0.1f);
-                    nameView.setRenderable(viewRenderable);
-                    nameView.select();
-                    TextView txt_name =(TextView)viewRenderable.getView();
-                    txt_name.setText(name);
-                    txt_name.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            anchorNode.setParent(null);
-                           Intent i = new Intent(MainActivity.this,MainActivity.class);
-                            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            MainActivity.this.startActivity(i);
-
-                        }
-                    });
-
-
-
-                });
-
-
-
-
-    }
-
-
-    //Setting Background of TEXT
-
-    private void setBackground(int id) {
-
-        for(int i=0; i<arrayView.length; i++){
-
-            if(arrayView[i].getId()== id) {
-                arrayView[i].setBackgroundColor(Color.parseColor("#17170459"));
-            }
-            else arrayView[i].setBackgroundColor(Color.TRANSPARENT);
-
-
-        }
-
-
-    }
+//    private void addName(AnchorNode anchorNode, TransformableNode model, String name) {
+//
+//
+//
+//        TransformableNode nameView= new TransformableNode(arFragment.getTransformationSystem());
+//
+//        ViewRenderable.builder().setView(this,R.layout.furniture_name)
+//                .build()
+//                .thenAccept(viewRenderable -> {
+//                    nameView.setLocalPosition(new Vector3(0f,model.getLocalPosition().y+0.4f,0));
+//                    nameView.setParent(anchorNode);
+//                    nameView.getScaleController().setMaxScale(1f);
+//                    nameView.getScaleController().setMinScale(0.1f);
+//                    nameView.setRenderable(viewRenderable);
+//                    nameView.select();
+//                    TextView txt_name =(TextView)viewRenderable.getView();
+//                    txt_name.setText(name);
+//                    txt_name.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View view) {
+//                            anchorNode.setParent(null);
+//                           Intent i = new Intent(MainActivity.this,MainActivity.class);
+//                            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                            MainActivity.this.startActivity(i);
+//
+//                        }
+//                    });
+//
+//
+//
+//                });
+//
+//
+//
+//
+//    }
+//
+//
+//    //Setting Background of TEXT
+//
+//    private void setBackground(int id) {
+//
+//        for(int i=0; i<arrayView.length; i++){
+//
+//            if(arrayView[i].getId()== id) {
+//                arrayView[i].setBackgroundColor(Color.parseColor("#17170459"));
+//            }
+//            else arrayView[i].setBackgroundColor(Color.TRANSPARENT);
+//
+//
+//        }
+//
+//
+//    }
 
     }
 

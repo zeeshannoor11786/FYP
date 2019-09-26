@@ -31,7 +31,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-   // implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.6.0'
+    // implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.6.0'
 
     implementation 'com.google.ar:core:1.6.0'
 
@@ -40,6 +40,9 @@ dependencies {
 
     // Alternatively, use ArSceneView without the UX dependency.
     implementation 'com.google.ar.sceneform:core:1.6.0'
+
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
 }
 
 
@@ -48,9 +51,6 @@ apply plugin: 'com.google.ar.sceneform.plugin'
 //        'default',
 //        'sampledata/model/chair.sfa',
 //        'src/main/res/raw/chair')
-
-
-
 
 //sceneform.asset('sampledata/model/chair.FBX',
 //        'default',
@@ -85,3 +85,8 @@ sceneform.asset('sampledata/model/desk.fbx',
         'default',
         'sampledata/model/desk.sfa',
         'src/main/res/raw/desk')
+
+sceneform.asset('sampledata/bedwhite.fbx',
+        'default',
+        'sampledata/bedwhite.sfa',
+        'src/main/res/raw/bedwhite')

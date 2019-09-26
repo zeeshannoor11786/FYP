@@ -95,7 +95,7 @@
     file: 'sampledata/model/bed.fbx',
     name: 'bed',
     recenter: 'root',
-    scale: 0.00047399999999999997,
+    scale: 0.0000047399999999999997,
   },
   samplers: [
     {
