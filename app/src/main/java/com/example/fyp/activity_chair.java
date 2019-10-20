@@ -28,9 +28,9 @@ import javax.microedition.khronos.opengles.GL10;
 public class activity_chair extends AppCompatActivity implements View.OnClickListener {
 
     ArFragment arFragment;
-    private ModelRenderable blackbedRenderable,bedwhiteRenderable;
+    private ModelRenderable chairofficeRenderable,moonchairRenderable;
 
-    ImageView blackbed,bedwhite;
+    ImageView chairoffice,moonchair;
 
     View arrayView[];
 
@@ -46,8 +46,8 @@ public class activity_chair extends AppCompatActivity implements View.OnClickLis
         //views
 
 
-       bedwhite =(ImageView) findViewById(R.id.bedwhite);
-        blackbed =(ImageView) findViewById(R.id.blackbed);
+        moonchair =(ImageView) findViewById(R.id.moonchair);
+        chairoffice =(ImageView) findViewById(R.id.chairoffice);
 
 
 
@@ -83,8 +83,8 @@ public class activity_chair extends AppCompatActivity implements View.OnClickLis
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             ModelRenderable.builder()
-                    .setSource(this, R.raw.blackbed)
-                    .build().thenAccept(renderable -> blackbedRenderable  = renderable)
+                    .setSource(this, R.raw.chairoffice)
+                    .build().thenAccept(renderable -> chairofficeRenderable  = renderable)
                     .exceptionally(
                             throwable -> {
                                 Toast.makeText(this, "Not found", Toast.LENGTH_SHORT).show();
@@ -95,8 +95,8 @@ public class activity_chair extends AppCompatActivity implements View.OnClickLis
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             ModelRenderable.builder()
-                    .setSource(this, R.raw.bedwhite)
-                    .build().thenAccept(renderable -> bedwhiteRenderable  = renderable)
+                    .setSource(this, R.raw.moonchair)
+                    .build().thenAccept(renderable -> moonchairRenderable  = renderable)
                     .exceptionally(
                             throwable -> {
                                 Toast.makeText(this, "Not found", Toast.LENGTH_SHORT).show();
@@ -118,23 +118,21 @@ public class activity_chair extends AppCompatActivity implements View.OnClickLis
 
         if(selected==1)
         {
-            TransformableNode blackbed = new TransformableNode(arFragment.getTransformationSystem());
-            blackbed.setParent(anchorNode);
-            blackbed.setRenderable(blackbedRenderable);
-            blackbed.getScaleController();
-//            addName(anchorNode,blackbed,"Blackbed");
-            blackbed.select();
+            TransformableNode moonchair = new TransformableNode(arFragment.getTransformationSystem());
+            moonchair.setParent(anchorNode);
+            moonchair.setRenderable(moonchairRenderable);
+            moonchair.getScaleController();
+            moonchair.select();
         }
 
 
         if(selected==2)
         {
-            TransformableNode bedwhite = new TransformableNode(arFragment.getTransformationSystem());
-            bedwhite.setParent(anchorNode);
-            bedwhite.setRenderable(bedwhiteRenderable);
-            bedwhite.getScaleController();
-//            addName(anchorNode,desk,"Desk");
-            bedwhite.select();
+            TransformableNode chairoffice = new TransformableNode(arFragment.getTransformationSystem());
+            chairoffice.setParent(anchorNode);
+            chairoffice.setRenderable(chairofficeRenderable);
+            chairoffice.getScaleController();
+            chairoffice.select();
         }
 
     }
@@ -148,20 +146,19 @@ public class activity_chair extends AppCompatActivity implements View.OnClickLis
     private void setArrayView(){
 
         arrayView = new View[]{
-                blackbed,
+                chairoffice,moonchair
         };
     }
 
     @Override
     public void onClick(View v) {
-        if(v.getId()==R.id.blackbed ) {
+        if(v.getId()==R.id.moonchair ) {
             selected = 1;
-//            setBackground(v.getId());
 
         }
-        else if(v.getId()==R.id.bedwhite){
+        else if(v.getId()==R.id.chairoffice){
             selected = 2;
-//            setBackground(v.getId());
+
         }
 
 

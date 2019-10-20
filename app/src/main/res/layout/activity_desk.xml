@@ -22,10 +22,10 @@
 
 
             <ImageView
-                android:id="@+id/blackbed"
+                android:id="@+id/desksmall"
                 android:layout_width="100dp"
                 android:layout_height="150dp"
-                android:src="@drawable/blackbed" />
+                android:src="@drawable/desksmall" />
 
             <ImageView
                 android:id="@+id/desk"

@@ -46,9 +46,9 @@ import javax.microedition.khronos.opengles.GL10;
 public class activity_desk extends AppCompatActivity implements View.OnClickListener {
 
     ArFragment arFragment;
-    private ModelRenderable blackbedRenderable,bedwhiteRenderable;
+    private ModelRenderable desksmallRenderable,deskRenderable;
 
-    ImageView blackbed,bedwhite;
+    ImageView desksmall,desk;
 
     View arrayView[];
 
@@ -64,8 +64,8 @@ public class activity_desk extends AppCompatActivity implements View.OnClickList
         //views
 
 
-        bedwhite =(ImageView) findViewById(R.id.bedwhite);
-        blackbed =(ImageView) findViewById(R.id.blackbed);
+        desk =(ImageView) findViewById(R.id.desk);
+        desksmall =(ImageView) findViewById(R.id.desksmall);
 
 
 
@@ -101,8 +101,8 @@ public class activity_desk extends AppCompatActivity implements View.OnClickList
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             ModelRenderable.builder()
-                    .setSource(this, R.raw.blackbed)
-                    .build().thenAccept(renderable -> blackbedRenderable  = renderable)
+                    .setSource(this, R.raw.desk)
+                    .build().thenAccept(renderable -> deskRenderable  = renderable)
                     .exceptionally(
                             throwable -> {
                                 Toast.makeText(this, "Not found", Toast.LENGTH_SHORT).show();
@@ -113,8 +113,8 @@ public class activity_desk extends AppCompatActivity implements View.OnClickList
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             ModelRenderable.builder()
-                    .setSource(this, R.raw.bedwhite)
-                    .build().thenAccept(renderable -> bedwhiteRenderable  = renderable)
+                    .setSource(this, R.raw.desksmall)
+                    .build().thenAccept(renderable -> desksmallRenderable  = renderable)
                     .exceptionally(
                             throwable -> {
                                 Toast.makeText(this, "Not found", Toast.LENGTH_SHORT).show();
@@ -136,23 +136,23 @@ public class activity_desk extends AppCompatActivity implements View.OnClickList
 
         if(selected==1)
         {
-            TransformableNode blackbed = new TransformableNode(arFragment.getTransformationSystem());
-            blackbed.setParent(anchorNode);
-            blackbed.setRenderable(blackbedRenderable);
-            blackbed.getScaleController();
+            TransformableNode desk = new TransformableNode(arFragment.getTransformationSystem());
+            desk.setParent(anchorNode);
+            desk.setRenderable(deskRenderable);
+            desk.getScaleController();
 //            addName(anchorNode,blackbed,"Blackbed");
-            blackbed.select();
+            desk.select();
         }
 
 
         if(selected==2)
         {
-            TransformableNode bedwhite = new TransformableNode(arFragment.getTransformationSystem());
-            bedwhite.setParent(anchorNode);
-            bedwhite.setRenderable(bedwhiteRenderable);
-            bedwhite.getScaleController();
+            TransformableNode desksmall = new TransformableNode(arFragment.getTransformationSystem());
+            desksmall.setParent(anchorNode);
+            desksmall.setRenderable(desksmallRenderable);
+            desksmall.getScaleController();
 //            addName(anchorNode,desk,"Desk");
-            bedwhite.select();
+            desksmall.select();
         }
 
     }
@@ -166,18 +166,18 @@ public class activity_desk extends AppCompatActivity implements View.OnClickList
     private void setArrayView(){
 
         arrayView = new View[]{
-                blackbed,
+                desksmall,desk,
         };
     }
 
     @Override
     public void onClick(View v) {
-        if(v.getId()==R.id.blackbed ) {
+        if(v.getId()==R.id.desksmall ) {
             selected = 1;
 //            setBackground(v.getId());
 
         }
-        else if(v.getId()==R.id.bedwhite){
+        else if(v.getId()==R.id.desk){
             selected = 2;
 //            setBackground(v.getId());
         }

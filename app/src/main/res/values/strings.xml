@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">FYP</string>
     <color name="yellow"></color>
+    <string name="Zeeshan_Noor"> Zeeshan Noor is the student of Computer Science department in Sir Syed University of Engineering and Technology. He is responsible for the 3D model’s base design and  helped in the design of android app. He is responsible for the 3D development alongside with Ahzam and Zulfiqar. Zeeshan has written the final report of the project. His expertise is .NET development, Android Development</string>
+    <string name="Zulfiqar">Zulfiqar Bin Zafar is the group leader of this final year project. He plays an important role in the development and documentation of this project. He is the student of Computer Science department of Sir Syed University of Engineering and Technology. He is responsible for the logic building and development of the Augmented Reality feature in this software. He has also improved the visuals of the 3D models. Zulfiqar expertise are Unity, Android Development, Web application development</string>
+    <string name="ahzam">Ahzam Ghauri is the student of Computer Science in Sir Syed University of Engineering and Technology. He is one of the most important member of this group. He built the android application for the project. He is the member who came up with the idea.
+He is always passionate about creating elegant android applications with new and challenging features. His expertise is Android application designing and software architecture designing including UI.
+</string>
+    <string name="emad">Muhammad Emad Siddiqui is the student of Computer Science in Sir Syed University of Engineering and Technology. He is 4th member of this group of final year project. His works is the UI design ideas of application and always come up with ideas for additional features which could be added to the project in the near future. </string>
+    <string name="nawaz">Muhammad Nawaz is the final member of this project and equally important for the group. He is responsible for the requirement gathering for the software and testing of each and every component.</string>
+
 </resources>

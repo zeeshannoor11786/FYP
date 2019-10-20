@@ -1,10 +1,15 @@
 package com.example.fyp;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+
+import java.net.URL;
 
 public class activty_cardLayout extends AppCompatActivity implements View.OnClickListener {
     private CardView sofaCard, blackbedcard, moonchairCard, deskCard, bedCard, cupboardCard;
@@ -31,6 +36,41 @@ public class activty_cardLayout extends AppCompatActivity implements View.OnClic
         cupboardCard.setOnClickListener(this);
 
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId()==R.id.visitSite)
+        {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com")));
+            //Uri.parse("https://www.facebook.com");
+
+        }
+
+        if(item.getItemId()==R.id.about)
+        {
+            startActivity(new Intent(activty_cardLayout.this, activity_about.class));
+            return true;
+//            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://zeeshannoor.wordpress.com")));
+           // Uri.parse("https://zeeshannoor.wordpress.com");
+        }
+        if(item.getItemId()==R.id.credit)
+        {
+            startActivity(new Intent(activty_cardLayout.this, activity_credit.class));
+        }
+        if(item.getItemId()==R.id.exit)
+        {
+            finish();
+            System.exit(0);
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

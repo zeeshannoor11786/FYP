@@ -22,13 +22,13 @@
 
 
             <ImageView
-                android:id="@+id/blackbed"
+                android:id="@+id/chairoffice"
                 android:layout_width="100dp"
                 android:layout_height="150dp"
-                android:src="@drawable/blackbed" />
+                android:src="@drawable/chairoffice" />
 
             <ImageView
-                android:id="@+id/chair"
+                android:id="@+id/moonchair"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/moonchair" />

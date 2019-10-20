@@ -32,17 +32,15 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     // implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.6.0'
-
     implementation 'com.google.ar:core:1.6.0'
-
     // Provides ArFragment, and other UX resources.
     implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.6.0'
-
     // Alternatively, use ArSceneView without the UX dependency.
     implementation 'com.google.ar.sceneform:core:1.6.0'
-
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+    implementation 'com.mikhaellopez:circularimageview:3.0.2'
 }
 
 
@@ -90,3 +88,32 @@ sceneform.asset('sampledata/bedwhite.fbx',
         'default',
         'sampledata/bedwhite.sfa',
         'src/main/res/raw/bedwhite')
+
+
+sceneform.asset('sampledata/model/chairoffice.fbx',
+        'default',
+        'sampledata/model/chairoffice.sfa',
+        'src/main/res/raw/chairoffice')
+
+
+
+
+sceneform.asset('sampledata/model/desksmall.obj',
+        'default',
+        'sampledata/model/desksmall.sfa',
+        'src/main/res/raw/desksmall')
+
+sceneform.asset('sampledata/model/cupboardsmall.fbx',
+        'default',
+        'sampledata/model/cupboardsmall.sfa',
+        'src/main/res/raw/cupboardsmall')
+
+sceneform.asset('sampledata/model/cupboardsingle.fbx',
+        'default',
+        'sampledata/model/cupboardsingle.sfa',
+        'src/main/res/raw/cupboardsingle')
+
+sceneform.asset('sampledata/model/bedchild.fbx',
+        'default',
+        'sampledata/model/bedchild.sfa',
+        'src/main/res/raw/bedchild')

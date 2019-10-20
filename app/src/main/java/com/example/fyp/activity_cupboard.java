@@ -46,9 +46,9 @@ import javax.microedition.khronos.opengles.GL10;
 public class activity_cupboard extends AppCompatActivity implements View.OnClickListener {
 
     ArFragment arFragment;
-    private ModelRenderable blackbedRenderable,bedwhiteRenderable;
+    private ModelRenderable cupboardRenderable,smallcupboardRenderable;
 
-    ImageView blackbed,bedwhite;
+    ImageView cupboard,smallcupboard;
 
     View arrayView[];
 
@@ -64,8 +64,8 @@ public class activity_cupboard extends AppCompatActivity implements View.OnClick
         //views
 
 
-        bedwhite =(ImageView) findViewById(R.id.bedwhite);
-        blackbed =(ImageView) findViewById(R.id.blackbed);
+        cupboard =(ImageView) findViewById(R.id.cupboard);
+        smallcupboard =(ImageView) findViewById(R.id.smallcupboard);
 
 
 
@@ -101,8 +101,8 @@ public class activity_cupboard extends AppCompatActivity implements View.OnClick
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             ModelRenderable.builder()
-                    .setSource(this, R.raw.blackbed)
-                    .build().thenAccept(renderable -> blackbedRenderable  = renderable)
+                    .setSource(this, R.raw.cupboard)
+                    .build().thenAccept(renderable -> cupboardRenderable  = renderable)
                     .exceptionally(
                             throwable -> {
                                 Toast.makeText(this, "Not found", Toast.LENGTH_SHORT).show();
@@ -113,8 +113,8 @@ public class activity_cupboard extends AppCompatActivity implements View.OnClick
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             ModelRenderable.builder()
-                    .setSource(this, R.raw.bedwhite)
-                    .build().thenAccept(renderable -> bedwhiteRenderable  = renderable)
+                    .setSource(this, R.raw.cupboardsingle)
+                    .build().thenAccept(renderable -> smallcupboardRenderable  = renderable)
                     .exceptionally(
                             throwable -> {
                                 Toast.makeText(this, "Not found", Toast.LENGTH_SHORT).show();
@@ -136,23 +136,25 @@ public class activity_cupboard extends AppCompatActivity implements View.OnClick
 
         if(selected==1)
         {
-            TransformableNode blackbed = new TransformableNode(arFragment.getTransformationSystem());
-            blackbed.setParent(anchorNode);
-            blackbed.setRenderable(blackbedRenderable);
-            blackbed.getScaleController();
+            TransformableNode cupboard = new TransformableNode(arFragment.getTransformationSystem());
+            cupboard.setParent(anchorNode);
+            cupboard.setRenderable(cupboardRenderable);
+            cupboard.getScaleController();
+            cupboard.getRotationController();
 //            addName(anchorNode,blackbed,"Blackbed");
-            blackbed.select();
+            cupboard.select();
         }
 
 
         if(selected==2)
         {
-            TransformableNode bedwhite = new TransformableNode(arFragment.getTransformationSystem());
-            bedwhite.setParent(anchorNode);
-            bedwhite.setRenderable(bedwhiteRenderable);
-            bedwhite.getScaleController();
+            TransformableNode smallcupboard = new TransformableNode(arFragment.getTransformationSystem());
+            smallcupboard.setParent(anchorNode);
+            smallcupboard.setRenderable(smallcupboardRenderable);
+            smallcupboard.getScaleController();
+            smallcupboard.getRotationController();
 //            addName(anchorNode,desk,"Desk");
-            bedwhite.select();
+            smallcupboard.select();
         }
 
     }
@@ -166,18 +168,18 @@ public class activity_cupboard extends AppCompatActivity implements View.OnClick
     private void setArrayView(){
 
         arrayView = new View[]{
-                blackbed,
+                cupboard,smallcupboard,
         };
     }
 
     @Override
     public void onClick(View v) {
-        if(v.getId()==R.id.blackbed ) {
+        if(v.getId()==R.id.cupboard ) {
             selected = 1;
 //            setBackground(v.getId());
 
         }
-        else if(v.getId()==R.id.bedwhite){
+        else if(v.getId()==R.id.smallcupboard){
             selected = 2;
 //            setBackground(v.getId());
         }

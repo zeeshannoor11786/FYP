@@ -83,7 +83,7 @@ public class activity_blackbed extends AppCompatActivity implements View.OnClick
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             ModelRenderable.builder()
-                    .setSource(this, R.raw.blackbed)
+                    .setSource(this, R.raw.bedchild)
                     .build().thenAccept(renderable -> blackbedRenderable  = renderable)
                     .exceptionally(
                             throwable -> {
